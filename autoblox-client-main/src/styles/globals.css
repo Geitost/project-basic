@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-hex: #ffffff;
+  --background-hex: #18181b;
+}
+
+body {
+  color: var(--foreground-hex);
+  background: var(--background-hex);
+}
+
+.cta-container::before {
+  content: "border";
+  position: absolute;
+  pointer-events: none;
+  inset: 0;
+  border-radius: 0.5rem;
+  padding: 1.75px;
+  background: linear-gradient(-45deg, #6366f1, #ea5455);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}

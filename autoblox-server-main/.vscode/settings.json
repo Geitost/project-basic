@@ -1,0 +1,7 @@
+{
+  "cSpell.words": ["Bloxburg", "Onnx", "opencv", "ratelimits"],
+  "files.associations": {
+    "*.ejs": "html",
+    "allheaders.h": "c"
+  }
+}

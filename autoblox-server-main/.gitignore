@@ -1,0 +1,5 @@
+package-lock.json
+node_modules/
+onnx/
+server.exe
+main.db

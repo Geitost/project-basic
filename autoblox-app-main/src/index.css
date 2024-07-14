@@ -1,0 +1,32 @@
+body {
+  background: transparent !important;
+}
+
+#root {
+  background: rgba(24, 24, 27, 1);
+  border-radius: 0.5rem;
+  width: 100vw;
+  height: 100vh;
+  overflow: clip;
+}
+
+nav {
+  -webkit-app-region: drag;
+}
+
+nav > * {
+  -webkit-app-region: no-drag;
+}
+
+/* Other browsers */
+*::-webkit-scrollbar {
+  width: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #373a40;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AutoBlox Key</title>
+    <link rel="stylesheet" href="/css/main.css" />
+
+    <script>
+      function handleCopy() {
+        navigator.clipboard.writeText("{{key}}");
+
+        document.querySelector("button").innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 text-green-500">
+          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+        </svg>
+        `;
+
+        setTimeout(() => {
+          document.querySelector("button").innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#ea5455" class="w-4 h-4 text-primary">
+            <path d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.12A1.5 1.5 0 0117 6.622V12.5a1.5 1.5 0 01-1.5 1.5h-1v-3.379a3 3 0 00-.879-2.121L10.5 5.379A3 3 0 008.379 4.5H7v-1z" />
+            <path d="M4.5 6A1.5 1.5 0 003 7.5v9A1.5 1.5 0 004.5 18h7a1.5 1.5 0 001.5-1.5v-5.879a1.5 1.5 0 00-.44-1.06L9.44 6.439A1.5 1.5 0 008.378 6H4.5z" />
+          </svg>
+        `;
+        }, 1500);
+      }
+    </script>
+  </head>
+
+  <body
+    class="bg-zinc-900 flex h-screen items-center justify-center">
+    {{#unless pro}}
+    {{> 'partials/message' }}
+    {{/unless}}
+    <div class="space-y-12 w-full">
+      <img class="w-28 h-28 mx-auto" src="/emblem.svg" alt="AutoBlox Emblem" />
+      <div class="flex flex-col w-full gap-1 items-center justify-center px-8">
+        <h1
+          class="flex items-center bg-zinc-800 pl-3 pr-2 py-2 w-full max-w-lg rounded-lg border text-white border-primary justify-between text-sm font-medium">
+          {{key}}
+          <button
+            onclick="handleCopy()"
+            class="hover:bg-zinc-600 duration-300 px-1 py-1 rounded-lg">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="#ea5455"
+              class="w-4 h-4">
+              <path
+                d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.12A1.5 1.5 0 0117 6.622V12.5a1.5 1.5 0 01-1.5 1.5h-1v-3.379a3 3 0 00-.879-2.121L10.5 5.379A3 3 0 008.379 4.5H7v-1z" />
+              <path
+                d="M4.5 6A1.5 1.5 0 003 7.5v9A1.5 1.5 0 004.5 18h7a1.5 1.5 0 001.5-1.5v-5.879a1.5 1.5 0 00-.44-1.06L9.44 6.439A1.5 1.5 0 008.378 6H4.5z" />
+            </svg>
+          </button>
+        </h1>
+        <h2 class="text-white">expires in {{expiresIn}}
+          {{#if pro}}
+            day(s)
+          {{else}}
+            hour(s)
+          {{/if}}
+        </h2>
+      </div>
+    </div>
+  </body>
+</html>
